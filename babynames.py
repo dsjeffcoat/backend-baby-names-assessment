@@ -117,13 +117,13 @@ def main(args):
     # or to write the list to a summary file (e.g. `baby1990.html.summary`).
 
     for file in file_list:
-        if file_list:
-            for file in file_list:
-                print('\n'.join(extract_names(file)))
         if create_summary:
             with open(file + '.summary', 'w') as ofile:
                 for name in '\n'.join(extract_names(file)):
                     ofile.write(name)
+        elif file_list:
+            for file in file_list:
+                print('\n'.join(extract_names(file)))
 
 
 if __name__ == '__main__':
